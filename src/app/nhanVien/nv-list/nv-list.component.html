@@ -1,0 +1,22 @@
+<h4>Danh sách nhân viên</h4>
+<div class="sp dfl">
+  <div class="card-ctn" *ngFor="let nv of listNhanVien">
+    <div class="card-main">
+      <div class="card-main-header">
+        <span class="card-company-number">ID&nbsp;{{ nv.id }}</span>
+        <div class="card-employee-photo-ctn">
+          <img src="{{ nv.avt }}" class="card-employee-photo" />
+        </div>
+      </div>
+      <div class="card-main-footer">
+        <h5 class="card-employee-name">{{ nv.ho }} {{ nv.ten }}</h5>
+        <!-- <span class="card-company-employee-role">{{ nv.ngaysinh }}</span> -->
+        <span class="card-id-card-text">Ngày sinh: {{ nv.ngaysinh }}</span>
+        <span class="card-id-card-text"
+          >Giới tính: {{ nv.phai ? "Nam" : "Nữ" }}</span
+        >
+        <span class="card-id-card-text">Khu vực: Miền {{ nv.khuvuc }}</span>
+      </div>
+    </div>
+  </div>
+</div>

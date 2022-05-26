@@ -1,0 +1,148 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Quản lý dự án FPoly</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"
+            >Bảng điều khiển</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Giới thiệu</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dự án
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/duanThem"
+                >Thêm dự án</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/duanList"
+                >Danh sách dự án</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Task
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/taskThem"
+                >Thêm task</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/taskList"
+                >Danh sách task</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Nhân viên
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/nvThem"
+                >Thêm nhân viên</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/nvList"
+                >Danh sách nhân viên</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Tài khoản
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/dangNhap"
+                >Đăng nhập</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/dangKy">Đăng ký</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/quenMatKhau"
+                >Quên mật khẩu</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" ngClass="float-end">
+        <input
+          class="form-control me-2"
+          type="text"
+          placeholder="Tìm kiếm"
+          name="keyword"
+        />
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div style="width: 100%; text-align: right">2/3/2021</div>
+<div class="main mt-3">
+  <app-leader class="leader"></app-leader>
+  <div class="info-project">
+    <main class="main_container">
+      <!-- <app-duan-chi-tiet (teamOut)="dataTeam($event)"></app-duan-chi-tiet> -->
+      <router-outlet (activate)="dataTeam($event)"> </router-outlet>
+    </main>
+  </div>
+  <app-list-member class="list-member" [team]="team"></app-list-member>
+</div>

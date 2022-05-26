@@ -1,0 +1,67 @@
+<div class="card" style="width: 100%">
+  <div class="card-header">Thành viên của team</div>
+
+  <div class="list-group list-group-flush">
+    <a
+      class="btn btn-primary list-group-item customBtnCollapse"
+      data-bs-toggle="collapse"
+      href="#collapseExample"
+      role="button"
+      aria-expanded="false"
+      aria-controls="collapseExample"
+    >
+      Bắc
+    </a>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let north of team.memberNorth">
+          {{ north.ten }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="list-group list-group-flush">
+    <a
+      class="btn btn-primary list-group-item customBtnCollapse"
+      data-bs-toggle="collapse"
+      href="#collapseExample2"
+      role="button"
+      aria-expanded="false"
+      aria-controls="collapseExample"
+    >
+      Trung
+    </a>
+  </div>
+  <div class="collapse" id="collapseExample2">
+    <div class="card card-body">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let central of team.memberCentral">
+          {{ central.ten }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="list-group list-group-flush">
+    <a
+      class="btn btn-primary list-group-item customBtnCollapse"
+      data-bs-toggle="collapse"
+      href="#collapseExample3"
+      role="button"
+      aria-expanded="false"
+      aria-controls="collapseExample"
+    >
+      Nam
+    </a>
+  </div>
+  <div class="collapse" id="collapseExample3">
+    <div class="card card-body">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let south of team.memberSouth">
+          {{ south.ten }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

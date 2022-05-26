@@ -1,0 +1,72 @@
+<div class="btn_find">
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    (change)="onChange($event.target)"
+  >
+    <option
+      *ngFor="let duAnSelect of allDuAn"
+      [value]="duAnSelect.id"
+      [selected]="duAnSelect.id === idDuAn"
+    >
+      {{ duAnSelect.tenDuAn }}
+    </option>
+  </select>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>2022</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div class="row_table">
+  <h4>{{ duAn.tenDuAn }}</h4>
+  <div class="table1">
+    <div class="title_table">TỔNG THỂ VỀ Dự ÁN</div>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">Chi phí dự án</th>
+          <td>{{ duAn.tien | currency: "VND":true:"1.0-3" }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Hiện tại đã chi</th>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Còn lại</th>
+          <td>{{ duAn.tien | currency: "VND":true:"1.0-3" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table1">
+    <div class="title_table">THÀNH VIÊN CỦA NHÓM</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Khu Vực</th>
+          <th scope="col">Số Lượng Nhân Viên</th>
+          <th scope="col">Nhân Viên Tạm Nghỉ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Bắc</th>
+          <td>{{ totalNorth }}</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Trung</th>
+          <td>{{ totalCentral }}</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Nam</th>
+          <td>{{ totalSouth }}</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

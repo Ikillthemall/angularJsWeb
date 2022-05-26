@@ -1,0 +1,25 @@
+<h4>Danh sách dự án</h4>
+<div class="sp dfl">
+  <div class="card" *ngFor="let da of listDuAn">
+    <div class="g-0">
+      <div class="card-body">
+        <a href="#" routerLink="/duan/{{ da.id }}">
+          <h5 class="card-title">{{ da.tenDuAn }}</h5>
+        </a>
+        <p class="card-text">
+          <small class="text-muted">ID: {{ da.id }}</small>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">Ngày bắt đầu: {{ da.ngayStart }}</small>
+        </p>
+        <p class="card-text">
+          Tổng tiền:
+          <span class="text-danger"
+            ><strong> {{ da.tien | currency: "VND":true:"1.0-3" }}</strong>
+          </span>
+        </p>
+        <button type="button" class="btn btn-outline-warning">Sửa</button>
+      </div>
+    </div>
+  </div>
+</div>

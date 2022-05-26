@@ -1,0 +1,29 @@
+<form>
+  <h5 class="bg-info p-2">THÊM DỰ ÁN</h5>
+  <p class="mb-3">
+    <span class="input-title">Tên dự án</span> 
+    <input class="form-control" placeholder="Nhập tên dự án" />
+  </p>
+  <p class="mb-3"><span class="input-title">Ngày bắt đầu </span><input type="date" class="form-control" /></p>
+  <p class="mb-3">
+    <span class="input-title">Tiền </span>
+    <input class="form-control" placeholder="Nhập số tiền" />
+  </p>
+  <p class="mb-3">
+    <span class="input-title">Leader</span>
+    <select multiple size="2" class="form-control">
+      <option *ngFor="let leader of listLeader" value="{{ leader.id }}">
+        {{ leader.ho + " " + leader.ten }}
+      </option>
+    </select>
+  </p>
+  <p class="mb-3">
+    <span class="input-title">Thành viên</span>
+    <select multiple size="5" class="form-control">
+      <option *ngFor="let nv of listNhanVien" value="{{ nv.id }}">
+        {{ nv.ho + " " + nv.ten }}
+      </option>
+    </select>
+  </p>
+  <p><button class="btn btn-primary p-2">Thêm dự án</button></p>
+</form>

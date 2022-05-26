@@ -1,0 +1,23 @@
+.card {
+  border: none;
+  .card-header {
+    background-color: #a49e9e;
+  }
+  .card-img {
+    background-color: #eae6e6;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 30%;
+    }
+  }
+  .card-body {
+    text-align: center;
+    background-color: #eae6e6;
+    flex: none;
+  }
+}
+.align-items-center {
+  font-weight: 600;
+  font-size: 1rem;
+}

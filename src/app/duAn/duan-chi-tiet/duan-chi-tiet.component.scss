@@ -1,0 +1,30 @@
+.btn_find {
+  display: flex;
+  justify-content: space-between;
+  select {
+    width: fit-content;
+  }
+}
+.row_table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  // background-color: rgba(129, 127, 127, 0.4);
+  width: 100%;
+  margin: 1rem 0rem;
+  padding: 1rem 0rem;
+  .title_table {
+    width: 100%;
+    background-color: rgb(19, 124, 33);
+    text-align: center;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 3px;
+  }
+  .table1 {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+}

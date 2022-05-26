@@ -1,0 +1,38 @@
+.project-title {
+  text-align: center;
+}
+.sp {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  justify-content: space-between;
+  .card {
+    width: calc((100% - 10px) / 2);
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    button {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  .fit-height {
+    height: fit-content;
+  }
+}
+.card-title {
+  background-color: #04B2F7;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.project-total-money {
+  color: #57B657;
+}

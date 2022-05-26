@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.list-employee-title {
+  text-align: center;
+}
+.dfl {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  justify-content: space-between;
+}
+
+.card-ctn {
+  width: 100%;
+  max-width: 48%;
+  height: 88%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.32), inset 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.card-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset 0 0 10px rgba(0, 0, 0, 0.15);
+  z-index: 14;
+}
+
+.card-main::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: #04B2F7;
+  border-radius: 10px 10px 38px 38px;
+  z-index: -1;
+}
+
+.card-main-header {
+  width: 100%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+
+.card-company-number {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.026rem;
+}
+
+.card-company-logo-ctn {
+  width: 50%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 15px auto;
+}
+
+.card-company-logo-image-ctn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 100vh;
+  margin: 0 6px;
+}
+
+.card-company-logo-image {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 100vh;
+}
+
+.card-company-name {
+  color: #fff;
+  letter-spacing: 0.032rem;
+}
+
+.card-employee-photo-ctn {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.card-employee-photo {
+  display: inline-block;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  border-radius: 100vh;
+}
+
+.card-main-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px 5px 10px;
+}
+
+.card-employee-name {
+  text-align: center;
+  letter-spacing: 0.032rem;
+  color: #A70E1A;
+  font-weight: 700;
+}
+
+.card-company-employee-role {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background: #ff9580;
+  color: #fff;
+  padding: 2px;
+  margin: 2px 0;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-id-card-text {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.02rem;
+}

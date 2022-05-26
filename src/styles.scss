@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-header {
+    background-color: #f5f5f5;
+}
+.navbar-brand {
+    color: #009CDB;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.nav-link {
+    color: #111;
+    &:hover {
+        color: #04B2F7;
+    }
+}
+.font-weight-bold {
+    font-weight: 700;
+}
+.btn-search {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    outline: none;
+    &:hover {
+        background-color: rgb(43, 42, 42);
+        color: #fff;
+    }
+}

@@ -1,0 +1,46 @@
+<form>
+  <h5 class="bg-info p-2">THÊM TASK</h5>
+  <p class="mb-3">
+    Tên task <input class="form-control" placeholder="Nhập tên task" />
+  </p>
+  <p class="mb-3">
+    Mô tả
+    <textarea
+      class="form-control"
+      rows="2"
+      placeholder="Nhập mô tả..."
+    ></textarea>
+  </p>
+  <p class="mb-3">
+    Dự án
+    <select class="form-control">
+      <option *ngFor="let da of listDuAn" value="{{ da.id }}">
+        {{ da.tenDuAn }}
+      </option>
+    </select>
+  </p>
+  <p class="mb-3">
+    Người thực hiện
+    <select class="form-control">
+      <option *ngFor="let nv of listNhanVien" value="{{ nv.id }}">
+        {{ nv.ho + " " + nv.ten }}
+      </option>
+    </select>
+  </p>
+  <p class="mb-3">
+    Độ ưu tiên
+    <select class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </p>
+  <p class="mb-3">
+    Trạng thái
+    <select class="form-control">
+      <option value="1">Đang chờ</option>
+      <option value="2">Đã hoàn thành</option>
+      <option value="3">Đang sửa lỗi</option>
+    </select>
+  </p>
+  <p><button class="btn btn-primary p-2">Thêm Task</button></p>
+</form>

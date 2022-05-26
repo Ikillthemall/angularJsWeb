@@ -1,0 +1,17 @@
+<h4 class="bg-info p-2">DANH SÁCH TASK</h4>
+<div *ngFor="let task of listTask" class="mb-3">
+  <div>
+    <b>{{ task.tenTask }} </b><br />
+    {{ task.moTa }}
+  </div>
+  <div class="mb-3 border-bottom row">
+    <div class="col-6">
+      Priority: {{ task.priority }}<br />
+      Status: {{ task.status }}
+    </div>
+    <div class="col-6">
+      Nhân viên {{ task.nhanvienID }}<br />
+      Dự án: {{ task.duAnID }}
+    </div>
+  </div>
+</div>
