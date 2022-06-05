@@ -1,10 +1,10 @@
-<form #frm1="ngForm" (ngSubmit)="xuly(frm1.value)">
+<form #frm1="ngForm" (ngSubmit)="handleData(frm1.value)">
   <h5 class="bg-info p-2 title-info">THÊM DỰ ÁN</h5>
   <p class="mb-3">
     <span class="input-title">Tên dự án</span>
     <input
-      name="projectName"
-      [(ngModel)]="projectName"
+      name="proName"
+      [(ngModel)]="proName"
       class="form-control"
       placeholder="Nhập tên dự án"
       required
@@ -26,8 +26,8 @@
   <p class="mb-3">
     <span class="input-title">Ngày bắt đầu</span>
     <input
-      name="projectDate"
-      [(ngModel)]="projectDate"
+      name="proInitialDate"
+      [(ngModel)]="proInitialDate"
       type="date"
       class="form-control"
       required
@@ -42,9 +42,9 @@
   <p class="mb-3">
     <span class="input-title">Tiền</span>
     <input
-      name="projectPrice"
+      name="proPrice"
       type="number"
-      [(ngModel)]="projectPrice"
+      [(ngModel)]="proPrice"
       class="form-control"
       placeholder="Nhập số tiền"
       required
@@ -55,7 +55,7 @@
         Chưa nhập giá tiền.
       </span>
     </span>
-    <span *ngIf="projectPrice < 0" class="text-danger">
+    <span *ngIf="proPrice < 0" class="text-danger">
       Vui lòng nhập số tiền lớn hơn 0
     </span>
   </p>
@@ -75,8 +75,8 @@
       </div>
     </span>
     <select
-      name="projectLeader"
-      [(ngModel)]="projectLeader"
+      name="proLeader"
+      [(ngModel)]="proLeader"
       multiple
       size="2"
       class="form-control"
@@ -109,8 +109,8 @@
       </div>
     </span>
     <select
-      name="projectMember"
-      [(ngModel)]="projectMember"
+      name="proMember"
+      [(ngModel)]="proMember"
       multiple
       size="5"
       class="form-control"

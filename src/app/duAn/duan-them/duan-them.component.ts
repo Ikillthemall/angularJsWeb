@@ -11,11 +11,11 @@ import { NhanVienService } from 'src/app/service/nhan-vien.service';
   styleUrls: ['./duan-them.component.scss'],
 })
 export class DuanThemComponent implements OnInit {
-  projectName: any;
-  projectDate: any;
-  projectPrice: any;
-  projectLeader: any;
-  projectMember: any;
+  proName: any;
+  proInitialDate: any;
+  proPrice: any;
+  proLeader: any;
+  proMember: any;
   constructor(
     private LeaderService: LeaderService,
     private NhanVienService: NhanVienService,
@@ -24,7 +24,7 @@ export class DuanThemComponent implements OnInit {
 
   listLeader: Leader[] = [];
   listNhanVien: NhanVien[] = [];
-  allProject: any;
+  projects: any;
   ngOnInit(): void {
     this.LeaderService.getData().subscribe(
       (response: any) => {
@@ -44,7 +44,7 @@ export class DuanThemComponent implements OnInit {
     );
     this.DuAnService.getData().subscribe(
       (response: any) => {
-        this.allProject = response;
+        this.projects = response;
       },
       (error: any) => {
         console.log(error);
@@ -52,18 +52,26 @@ export class DuanThemComponent implements OnInit {
     );
   }
 
-  xuly(data: any) {
-    // let allProject = this.DuAnService.getAll();
+  handleData(data: any) {
+    // let projects = this.DuAnService.getAll();
     data = {
-      id: parseInt(this.allProject[this.allProject.length - 1].id) + 1,
-      tenDuAn: this.projectName,
-      ngayStart: this.projectDate,
-      tien: parseInt(this.projectPrice),
-      leader: this.projectLeader,
-      thanhvien: this.projectMember,
+      id: parseInt(this.projects[this.projects.length - 1].id) + 1,
+      tenDuAn: this.proName,
+      ngayStart: this.proInitialDate,
+      tien: parseInt(this.proPrice),
+      leader: this.proLeader,
+      thanhvien: this.proMember,
     };
     console.log('Data: ', data);
-    this.DuAnService.addItem(data);
-    alert('Thêm dự án thành công');
+    if((this.proName && this.proInitialDate && this.proPrice && this.proLeader && this.proMember) !== undefined) {
+      this.DuAnService.addItem(data);
+      setTimeout(() => { 
+        alert('Thêm dự án thành công');
+      }, 1000);
+    }else {
+      setTimeout(() => {
+        alert("Thêm thất bại");
+      }, 1000);
+    }
   }
 }

@@ -1,5 +1,5 @@
-<form #frm1="ngForm" (ngSubmit)="xuly(frm1.value)">
-  <h5 class="bg-warning p-2">SỬA DỰ ÁN</h5>
+<form #frm1="ngForm" (ngSubmit)="handleData(frm1.value)">
+  <h5 class="bg-info p-2">SỬA DỰ ÁN</h5>
   <p class="mb-3">
     Tên dự án
     <input
@@ -7,7 +7,7 @@
       [(ngModel)]="projectName"
       class="form-control"
       placeholder="Nhập tên dự án"
-      required
+     
       minlength="4"
       #errName="ngModel"
     />
@@ -30,7 +30,7 @@
       [(ngModel)]="projectDate"
       type="date"
       class="form-control"
-      required
+
       #errDate="ngModel"
     />
     <span *ngIf="errDate.invalid && (errDate.dirty || errDate.touched)">
@@ -47,7 +47,7 @@
       [(ngModel)]="projectPrice"
       class="form-control"
       placeholder="Nhập số tiền"
-      required
+
       #errPrice="ngModel"
     />
     <span *ngIf="errPrice.invalid && (errPrice.dirty || errPrice.touched)">
@@ -79,7 +79,7 @@
       aria-label="Default select example"
       name="projectLeader"
       [(ngModel)]="projectLeader"
-      required
+  
       #errLeader="ngModel"
     >
       <option
@@ -118,7 +118,7 @@
       [(ngModel)]="projectMember"
       multiple
       size="5"
-      required
+
       #errMember="ngModel"
     >
       <option *ngFor="let nv of listNhanVien" [value]="nv.id">
@@ -131,5 +131,5 @@
       </span>
     </span>
   </p>
-  <p><button type="submit" class="btn btn-primary p-2">Cập nhật</button></p>
+  <p class="btn-finish"><button type="submit" class="btn btn-info p-2 text-white">Cập nhật</button></p>
 </form>

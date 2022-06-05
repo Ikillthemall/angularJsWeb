@@ -2,30 +2,34 @@
 <div *ngFor="let task of listTask" class="mb-3 main-task">
   <div class="width80">
     <b>{{ task.tenTask }} </b><br />
-    <span class="fz9">
+    <span class="fz9" style="font-style: italic; font-weight: 400;">
       {{ task.moTa }}
     </span>
   </div>
   <div class="mb-3 mt-1 border-bottom row">
     <div class="col-5">
-      <strong>Độ ưu tiên:</strong> {{ task.priority == 1 ? "Gấp" : "Không gấp" }}<br />
-      <strong>Trạng thái:</strong>
-      {{
-        task.status == 1
-          ? "Đang chờ"
-          : task.status == 2
-          ? "Hoàn thành"
-          : "Đang sửa lỗi"
-      }}
+      <span class="text-group"><strong>Độ ưu tiên:&ensp;</strong>{{ task.priority == 1 ? "Gấp" : "Không gấp" }}</span>
+      <span class="text-group">
+        <strong>Trạng thái:&ensp;</strong>
+        {{
+          task.status == 1
+            ? "Đang chờ"
+            : task.status == 2
+            ? "Hoàn thành"
+            : "Đang sửa lỗi"
+        }}
+      </span>
     </div>
     <div class="col-6">
       <div *ngFor="let nv of listNV">
-        <span *ngIf="task.nhanvienID == nv.id"
-          ><strong>Nhân viên: </strong>{{ nv.ho + " " + nv.ten }}</span
+        <span class="text-group" *ngIf="task.nhanvienID == nv.id"
+          ><strong>Nhân viên: </strong>&ensp;{{ nv.ho + " " + nv.ten }}</span
         >
       </div>
       <div *ngFor="let da of listDuAn">
-        <span *ngIf="task.duAnID == da.id"><strong>Dự án:</strong> {{ da.tenDuAn }}</span>
+        <span class="text-group" *ngIf="task.duAnID == da.id">
+          <strong>Dự án:&ensp;</strong>{{ da.tenDuAn }}
+        </span>
       </div>
     </div>
   </div>

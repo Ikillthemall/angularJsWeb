@@ -47,8 +47,15 @@ export class NvSuaComponent implements OnInit {
       phai: data.staffGender,
       khuvuc: data.staffArea,
     };
-
-    this.NhanVienService.editItem(data);
-    alert('Sửa nhân viên thành công');
+    if(data) {
+      this.NhanVienService.editItem(data);
+      setTimeout(() => {
+        alert('Cập nhật nhân viên thành công');
+      },1000)
+    }else {
+      setTimeout(() => {
+        alert("Cập nhật nhân viên thành công")
+      }, 1000);
+    }
   }
 }

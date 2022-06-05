@@ -2,12 +2,12 @@
   "task": [
     {
       "id": 2,
-      "tenTask": "Mô hình MVC",
-      "duAnID": 2,
-      "nhanvienID": 2,
+      "tenTask": "Mô hình MVD",
+      "duAnID": "2",
+      "nhanvienID": "2",
       "moTa": "Áp dụng mô hình vào dự án, thực hiện CRUD Admin",
-      "status": 2,
-      "priority": 1
+      "status": "2",
+      "priority": "1"
     },
     {
       "id": 3,
@@ -181,19 +181,28 @@
       "ngaysinh": "1995-04-24",
       "phai": "false",
       "khuvuc": "Trung"
+    },
+    {
+      "id": "12",
+      "avt": "https://znews-photo.zingcdn.me/w1024/Uploaded/aobovhp/2021_01_23/captain1.jpg",
+      "ho": "Evans",
+      "ten": "Chris",
+      "ngaysinh": "2022-06-08",
+      "phai": "true",
+      "khuvuc": "Trung"
     }
   ],
   "duAn": [
     {
       "id": "1",
-      "tenDuAn": "Website Khởi nghiệp blockchain",
+      "tenDuAn": "Website startup blockchain",
       "ngayStart": "2022-03-01",
       "tien": "20000000",
       "leader": "1",
       "thanhvien": [
         "1",
-        "3",
-        "4"
+        "2",
+        "3"
       ]
     },
     {
@@ -306,6 +315,14 @@
       "tien": 120000,
       "leader": "undefined",
       "thanhvien": "5"
+    },
+    {
+      "id": "12",
+      "tenDuAn": "levutrung",
+      "ngayStart": "2022-06-01",
+      "tien": "1100000",
+      "leader": "2",
+      "thanhvien": "2"
     }
   ],
   "leader": [

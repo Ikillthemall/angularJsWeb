@@ -2,7 +2,8 @@
   <app-leader class="leader"></app-leader>
   <div class="info-project">
     <main class="main_container">
-      <router-outlet (teamOut)="dataTeam($event)"> </router-outlet>
+      <router-outlet (teamOut)="dataTeam($event)">
+      </router-outlet>
     </main>
   </div>
   <app-list-member class="list-member" [team]="team"></app-list-member>

@@ -51,7 +51,7 @@ export class DuanSuaComponent implements OnInit {
     );
   }
 
-  xuly(data: any) {
+  handleData(data: any) {
     data = {
       id: parseInt(this.project.id),
       tenDuAn: data.projectName,
@@ -60,8 +60,16 @@ export class DuanSuaComponent implements OnInit {
       leader: data.projectLeader,
       thanhvien: data.projectMember,
     };
+    if (data) {
+      setTimeout(() => {
+        this.DuAnService.editItem(data);
+        alert('Sửa dự án thành công');
 
-    this.DuAnService.editItem(data);
-    alert('Sửa dự án thành công');
+      },1000);
+    }else {
+      setTimeout(() => {
+        alert("Sửa thất bại");
+      },1000)
+    }
   }
 }

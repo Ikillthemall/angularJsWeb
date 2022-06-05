@@ -36,7 +36,7 @@ export class TaskThemComponent implements OnInit {
       this.allTask = data;
     });
     this.frm1 = new FormGroup({
-      taskName: new FormControl('Dự Án ABC', [
+      taskName: new FormControl('',[
         Validators.minLength(4),
         Validators.required,
       ]),
@@ -62,7 +62,15 @@ export class TaskThemComponent implements OnInit {
       status: data.taskStatus,
       priority: data.taskPriority,
     };
-    this.TaskService.addItem(data);
-    alert('Thêm task thành công');
+    if(data) {
+      this.TaskService.addItem(data);
+      setTimeout(() => {
+        alert('Thêm task thành công');
+      }, 1000);
+    }else {
+      setTimeout(() => {
+        alert("Thêm task thất bại")
+      },1000);
+    }
   }
 }
