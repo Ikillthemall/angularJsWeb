@@ -1,1 +1,111 @@
-<p>nv-sua works!</p>
+<form #frm1="ngForm" (ngSubmit)="xuly(frm1.value)">
+  <h5 class="bg-warning p-2">SỬA NHÂN VIÊN</h5>
+  <p class="mb-3">
+    Ảnh đại diện
+    <input
+      name="staffAvatar"
+      [(ngModel)]="staffAvatar"
+      class="form-control"
+      placeholder="Nhập url hình ảnh"
+    />
+  </p>
+  <p class="mb-3">
+    Họ
+    <input
+      name="staffFirstName"
+      [(ngModel)]="staffFirstName"
+      class="form-control"
+      placeholder="Nhập họ nhân viên"
+      required
+      minlength="2"
+      #errFirstName="ngModel"
+    />
+    <span
+      *ngIf="
+        errFirstName.invalid && (errFirstName.dirty || errFirstName.touched)
+      "
+    >
+      <span *ngIf="errFirstName.errors?.['required']" class="text-danger">
+        Chưa nhập họ.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Tên
+    <input
+      name="staffLastName"
+      [(ngModel)]="staffLastName"
+      class="form-control"
+      placeholder="Nhập tên nhân viên"
+      required
+      #errLastName="ngModel"
+    />
+    <span
+      *ngIf="errLastName.invalid && (errLastName.dirty || errLastName.touched)"
+    >
+      <span *ngIf="errLastName.errors?.['required']" class="text-danger">
+        Chưa nhập họ.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Ngày Sinh
+    <input
+      name="staffBirth"
+      [(ngModel)]="staffBirth"
+      type="date"
+      class="form-control"
+      required
+      #errBirth="ngModel"
+    />
+    <span *ngIf="errBirth.invalid && (errBirth.dirty || errBirth.touched)">
+      <span *ngIf="errBirth.errors?.['required']" class="text-danger">
+        Chưa chọn ngày sinh.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Giới tính
+
+    <select
+      name="staffGender"
+      [(ngModel)]="staffGender"
+      class="form-control"
+      required
+      size="2"
+      #errGender="ngModel"
+    >
+      <option value="true">Nam</option>
+      <option value="false">Nữ</option>
+    </select>
+    <span *ngIf="errGender.invalid && (errGender.dirty || errGender.touched)">
+      <span *ngIf="errGender.errors?.['required']" class="text-danger">
+        Chưa chọn giới tính.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Khu Vực
+
+    <select
+      name="staffArea"
+      [(ngModel)]="staffArea"
+      class="form-control"
+      required
+      size="3"
+      #errArea="ngModel"
+    >
+      <option value="Bắc">Bắc</option>
+      <option value="Trung">Trung</option>
+      <option value="Nam">Nam</option>
+    </select>
+    <span *ngIf="errArea.invalid && (errArea.dirty || errArea.touched)">
+      <span *ngIf="errArea.errors?.['required']" class="text-danger">
+        Chưa chọn khu vực.
+      </span>
+    </span>
+  </p>
+  <p>
+    <button type="submit" class="btn btn-primary p-2">Cập nhật</button>
+  </p>
+</form>

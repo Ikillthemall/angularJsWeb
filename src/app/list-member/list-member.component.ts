@@ -15,9 +15,9 @@ export class ListMemberComponent implements OnChanges {
   ngOnChanges($event: any): void {
     if ($event.team.firstChange) {
       this.team = {
-        memberSouth: [{ name: 'No Name' }],
-        memberCentral: [{ name: 'No Name' }],
-        memberNorth: [{ name: 'No Name' }],
+        memberSouth: [{ ho: '', ten: '' }],
+        memberCentral: [{ ho: '', ten: '' }],
+        memberNorth: [{ ho: '', ten: '' }],
       };
     } else {
       console.log($event.team);

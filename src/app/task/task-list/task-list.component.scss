@@ -1,0 +1,40 @@
+.main-task {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .width80 {
+    width: 80%;
+  }
+  .fz9 {
+    font-size: 0.9rem;
+  }
+}
+
+.btn-action {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  animation: showBtn 0.5s alternate;
+}
+@keyframes showBtn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+*> strong {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+}

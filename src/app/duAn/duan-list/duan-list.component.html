@@ -3,22 +3,41 @@
   <div class="card" *ngFor="let da of listDuAn">
     <div class="g-0">
       <div class="card-body">
-        <a href="#" routerLink="/duan/{{ da.id }}">
-          <h5 class="card-title">{{ da.tenDuAn }}</h5>
-        </a>
-        <p class="card-text">
-          <small class="text-muted">ID: {{ da.id }}</small>
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Ngày bắt đầu: {{ da.ngayStart }}</small>
-        </p>
-        <p class="card-text">
-          Tổng tiền:
-          <span class="text-danger"
-            ><strong> {{ da.tien | currency: "VND":true:"1.0-3" }}</strong>
-          </span>
-        </p>
-        <button type="button" class="btn btn-outline-warning">Sửa</button>
+        <div class="card-header bg-info">
+          <a href="#" routerLink="/duan/{{ da.id }}">
+            <h5 class="card-title">{{ da.tenDuAn }}</h5>
+          </a>
+        </div>
+        <div class="card-wrapper-text mt-2">
+          <p class="card-text">
+            <small class="text-muted"><strong>ID:</strong> {{ da.id }}</small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted"><strong>Ngày bắt đầu:</strong> {{ da.ngayStart }}</small>
+          </p>
+          <p class="card-text">
+            <strong>Tổng tiền:</strong>
+            <span class="text-danger"
+              ><strong> {{ da.tien | currency: "VND":true:"1.0-3" }}</strong>
+            </span>
+          </p>
+        </div>
+        <div class="btn-action mt-4">
+          <button
+            type="button"
+            class="btn btn-warning mb-2"
+            (click)="editDuAn(da)"
+          >
+            Sửa
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deleteDuAn(da.id)"
+          >
+            Xóa
+          </button>
+        </div>
       </div>
     </div>
   </div>

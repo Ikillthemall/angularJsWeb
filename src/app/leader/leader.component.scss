@@ -4,6 +4,7 @@
     background-color: #a49e9e;
   }
   .card-img {
+    padding-top: 1rem;
     background-color: #eae6e6;
     display: flex;
     justify-content: center;
@@ -16,8 +17,4 @@
     background-color: #eae6e6;
     flex: none;
   }
-}
-.align-items-center {
-  font-weight: 600;
-  font-size: 1rem;
 }

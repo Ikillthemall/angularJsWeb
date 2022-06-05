@@ -15,8 +15,11 @@ import { NvListComponent } from './nhanVien/nv-list/nv-list.component';
 import { NvThemComponent } from './nhanVien/nv-them/nv-them.component';
 import { NvSuaComponent } from './nhanVien/nv-sua/nv-sua.component';
 import { DuanListComponent } from './duAn/duan-list/duan-list.component';
-import { FormsModule } from '@angular/forms';
 import { DuanChiTietComponent } from './duAn/duan-chi-tiet/duan-chi-tiet.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,13 @@ import { DuanChiTietComponent } from './duAn/duan-chi-tiet/duan-chi-tiet.compone
     NvSuaComponent,
     DuanChiTietComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

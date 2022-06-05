@@ -1,1 +1,135 @@
-<p>duan-sua works!</p>
+<form #frm1="ngForm" (ngSubmit)="xuly(frm1.value)">
+  <h5 class="bg-warning p-2">SỬA DỰ ÁN</h5>
+  <p class="mb-3">
+    Tên dự án
+    <input
+      name="projectName"
+      [(ngModel)]="projectName"
+      class="form-control"
+      placeholder="Nhập tên dự án"
+      required
+      minlength="4"
+      #errName="ngModel"
+    />
+    <span *ngIf="errName.invalid && (errName.dirty || errName.touched)">
+      <span *ngIf="errName.errors?.['required']" class="text-danger">
+        Chưa nhập tên dự án.
+      </span>
+      <span
+        *ngIf="errName.errors?.['minlength']?.actualLength<errName.errors?.['minlength']?.requiredLength"
+        class="text-danger"
+      >
+        Tên dự án tối thiểu 4 ký tự.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Ngày bắt đầu
+    <input
+      name="projectDate"
+      [(ngModel)]="projectDate"
+      type="date"
+      class="form-control"
+      required
+      #errDate="ngModel"
+    />
+    <span *ngIf="errDate.invalid && (errDate.dirty || errDate.touched)">
+      <span *ngIf="errDate.errors?.['required']" class="text-danger">
+        Chưa chọn ngày bắt đầu.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Tiền
+    <input
+      name="projectPrice"
+      type="number"
+      [(ngModel)]="projectPrice"
+      class="form-control"
+      placeholder="Nhập số tiền"
+      required
+      #errPrice="ngModel"
+    />
+    <span *ngIf="errPrice.invalid && (errPrice.dirty || errPrice.touched)">
+      <span *ngIf="errPrice.errors?.['required']" class="text-danger">
+        Chưa nhập giá tiền.
+      </span>
+    </span>
+    <span *ngIf="projectPrice < 0" class="text-danger">
+      Vui lòng nhập số tiền lớn hơn 0
+    </span>
+  </p>
+  <p class="mb-3">
+    Leader
+    <span>
+      <div class="d-inline-block">
+        <div class="border-tooltip">
+          <a
+            href="#"
+            data-bs-toggle="tooltip"
+            title="Đối với Windows: Nhấn giữ nút điều khiển (ctrl) để chọn nhiều tùy chọn
+                    Đối với Mac: Nhấn giữ nút command để chọn nhiều tùy chọn"
+            >?</a
+          >
+        </div>
+      </div>
+    </span>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="projectLeader"
+      [(ngModel)]="projectLeader"
+      required
+      #errLeader="ngModel"
+    >
+      <option
+        *ngFor="let leader of listLeader"
+        [value]="leader.id"
+        [selected]="leader.id === projectLeader"
+      >
+        {{ leader.ho + " " + leader.ten }}
+      </option>
+    </select>
+    <span *ngIf="errLeader.invalid && (errLeader.dirty || errLeader.touched)">
+      <span *ngIf="errLeader.errors?.['required']" class="text-danger">
+        Chưa chọn leader.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Thành viên
+    <span>
+      <div class="d-inline-block">
+        <div class="border-tooltip">
+          <a
+            href="#"
+            data-bs-toggle="tooltip"
+            title="Đối với Windows: Nhấn giữ nút điều khiển (ctrl) để chọn nhiều tùy chọn
+                    Đối với Mac: Nhấn giữ nút command để chọn nhiều tùy chọn"
+            >?</a
+          >
+        </div>
+      </div>
+    </span>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="projectMember"
+      [(ngModel)]="projectMember"
+      multiple
+      size="5"
+      required
+      #errMember="ngModel"
+    >
+      <option *ngFor="let nv of listNhanVien" [value]="nv.id">
+        {{ nv.ho + " " + nv.ten }}
+      </option>
+    </select>
+    <span *ngIf="errMember.invalid && (errMember.dirty || errMember.touched)">
+      <span *ngIf="errMember.errors?.['required']" class="text-danger">
+        Chưa chọn member.
+      </span>
+    </span>
+  </p>
+  <p><button type="submit" class="btn btn-primary p-2">Cập nhật</button></p>
+</form>

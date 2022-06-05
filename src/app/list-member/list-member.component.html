@@ -17,7 +17,7 @@
     <div class="card card-body">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let north of team.memberNorth">
-          {{ north.ten }}
+          {{ north.ho + " " + north.ten }}
         </li>
       </ul>
     </div>
@@ -38,7 +38,7 @@
     <div class="card card-body">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let central of team.memberCentral">
-          {{ central.ten }}
+          {{ central.ho + " " + central.ten }}
         </li>
       </ul>
     </div>
@@ -59,7 +59,7 @@
     <div class="card card-body">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let south of team.memberSouth">
-          {{ south.ten }}
+          {{ south.ho + " " + south.ten }}
         </li>
       </ul>
     </div>

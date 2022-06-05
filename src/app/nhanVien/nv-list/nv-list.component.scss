@@ -144,3 +144,12 @@
   text-transform: capitalize;
   letter-spacing: 0.02rem;
 }
+.btn-action {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s linear;
+  &:hover {
+    opacity: 1;
+  }
+}

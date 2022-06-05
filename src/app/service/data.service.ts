@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  private subject = new Subject<any>();
+  private dataService: any = '';
 
+  //khi bấm nút sửa gọi method này để lưu dữ liệu vào biến dataService
   sendData(data: any) {
-    this.subject.next(data);
+    this.dataService = data;
   }
 
   clearData() {
-    this.subject.next(0);
+    this.dataService = '';
   }
 
-  getData(): Observable<any> {
-    return this.subject.asObservable();
+  //ở component form sửa, gọi getData để lấy dữ liệu từ dataService để
+  //load lên form
+  getData() {
+    return this.dataService;
   }
 }

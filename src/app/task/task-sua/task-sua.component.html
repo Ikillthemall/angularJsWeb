@@ -1,1 +1,69 @@
-<p>task-sua works!</p>
+<form [formGroup]="frm1" (ngSubmit)="xuly(frm1.value)">
+  <h5 class="bg-warning p-2">SỬA TASK</h5>
+  <p class="mb-3">
+    Tên task
+    <input
+      formControlName="taskName"
+      class="form-control"
+      placeholder="Nhập tên task"
+    />
+    <span *ngIf="frm1.controls['taskName']?.errors" class="text-danger">
+      Tên task tối thiểu 4 ký tự.
+    </span>
+  </p>
+  <p class="mb-3">
+    Mô tả
+    <textarea
+      formControlName="taskDescription"
+      class="form-control"
+      rows="2"
+      placeholder="Nhập mô tả..."
+    ></textarea>
+    <span
+      *ngIf="
+        frm1.controls['taskDescription'].invalid &&
+        (frm1.controls['taskDescription'].dirty ||
+          frm1.controls['taskDescription'].touched)
+      "
+    >
+      <span
+        *ngIf="frm1.controls['taskDescription']?.errors"
+        class="text-danger"
+      >
+        Mô tả tối thiểu 10 ký tự.
+      </span>
+    </span>
+  </p>
+  <p class="mb-3">
+    Dự án
+    <select formControlName="taskProject" class="form-control">
+      <option *ngFor="let da of listDuAn" value="{{ da.id }}">
+        {{ da.tenDuAn }}
+      </option>
+    </select>
+  </p>
+  <p class="mb-3">
+    Người thực hiện
+    <select formControlName="taskOwner" class="form-control">
+      <option *ngFor="let nv of listNhanVien" value="{{ nv.id }}">
+        {{ nv.ho + " " + nv.ten }}
+      </option>
+    </select>
+  </p>
+  <p class="mb-3">
+    Độ ưu tiên
+    <select formControlName="taskPriority" class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </p>
+  <p class="mb-3">
+    Trạng thái
+    <select formControlName="taskStatus" class="form-control">
+      <option value="1">Đang chờ</option>
+      <option value="2">Đã hoàn thành</option>
+      <option value="3">Đang sửa lỗi</option>
+    </select>
+  </p>
+  <p><button type="submit" class="btn btn-primary p-2">Cập nhật</button></p>
+</form>

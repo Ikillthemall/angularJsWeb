@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NhanVien } from '../nhan-vien';
 
@@ -8,68 +9,113 @@ export class NhanVienService {
   list: NhanVien[] = [
     {
       id: 1,
-      avt: 'https://br.atsit.in/vi/wp-content/uploads/2022/01/lieu-eren-co-chet-trong-attack-on-titan-season-4-part-2-episode-3.jpg',
-      ho: 'Jeager',
-      ten: 'Eren',
-      ngaysinh: '1333-2-3',
+      avt: 'https://scontent.xx.fbcdn.net/v/t39.1997-6/16344830_1458999190798524_1851726792633614336_n.png?stp=dst-png_s168x128&_nc_cat=1&ccb=1-7&_nc_sid=0572db&_nc_ohc=7dXE6x9zLlMAX87Or7V&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=00_AT_Kd_irJ6-OA5wJjx1YDQX7RRg64W2EhsNy_WpsEbuDaA&oe=628BB4D5',
+      ho: 'Nguyễn Bá',
+      ten: 'Đạo',
+      ngaysinh: '2001-1-3',
       phai: true,
-      khuvuc: 'Quận Shiganshina',
+      khuvuc: 'Bắc',
     },
     {
       id: 2,
-      avt: 'https://w0.peakpx.com/wallpaper/642/316/HD-wallpaper-mikasa-anime-attack-on-titan-shingeki-no-kyojin-snk.jpg',
-      ho: 'Ackerman',
-      ten: 'Mikasa',
-      ngaysinh: '1332-8-19',
-      phai: false,
-      khuvuc: 'Nữ',
+      avt: 'https://scontent.xx.fbcdn.net/v/t39.1997-6/16686112_1458993794132397_5069039369038331904_n.png?stp=dst-png_s168x128&_nc_cat=1&ccb=1-7&_nc_sid=0572db&_nc_ohc=WqPStJ8EDQgAX_i-a9W&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=00_AT9nyHcwg1alhrECJU118sZoM_lOQVWG2Je4X3AGtpdlxA&oe=628BC8FB',
+      ho: 'Phạm Kỳ',
+      ten: 'Luật',
+      ngaysinh: '2001-5-6',
+      phai: true,
+      khuvuc: 'Bắc',
     },
     {
       id: 3,
-      avt: 'http://streaming1.danviet.vn/upload/2-2020/images/2020-04-24/Kiem-hiep-Kim-Dung-Cao-thu-so-mot-cua-ho-Mo-Dung-tu-sang-tao-ra-tuyet-hoc-khong-thua-kem-gi-doc-Co-C-1058-1587743855-width500height375.jpg',
-      ho: 'Mộ',
-      ten: 'Dung',
-      ngaysinh: '1356-5-6',
+      avt: 'https://scontent.xx.fbcdn.net/v/t39.1997-6/70177190_2397096100376464_6529421781181136896_n.png?stp=dst-png_s168x128&_nc_cat=1&ccb=1-7&_nc_sid=0572db&_nc_ohc=2LLpK1npJEUAX-AWUf9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=00_AT-VXpEptDmbigAFHa9gms2RYYDvsGqi8AOsvKdy3xfqrw&oe=628A5C73',
+      ho: 'Mai Thanh',
+      ten: 'Toán',
+      ngaysinh: '2002-6-15',
       phai: true,
-      khuvuc: 'Phía Nam',
+      khuvuc: 'Nam',
     },
     {
       id: 4,
-      avt: 'https://danviet.mediacdn.vn/upload/4-2019/images/2019-10-10/Khong-phai-Hang-long-thap-bat-chuong-day-moi-la-tuyet-hoc-giup-Tieu-Phong-ap-che-quan-hung-tai-Tu-Hi-271-1570721305-width576height313.jpg',
-      ho: 'Kiều',
-      ten: 'Phong',
-      ngaysinh: '1352-6-2',
-      phai: true,
-      khuvuc: 'Phía Bắc',
+      avt: 'https://scr.vn/wp-content/uploads/2020/07/H%C3%ACnh-%C4%91%E1%BA%A1i-di%E1%BB%87n-%C4%91%E1%BA%B9p-1.jpg',
+      ho: 'Cao Thị Chót',
+      ten: 'Vót',
+      ngaysinh: '2002-8-19',
+      phai: false,
+      khuvuc: 'Nam',
+    },
+    {
+      id: 5,
+      avt: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYUTzPmToeXINLPent4vxqBqEfSgO-k8adI9OkpmfR-2FEajD5tbBpMyHjVPnkQ_gnyeM&usqp=CAU',
+      ho: 'Mai Phạt Sáu',
+      ten: 'Ngàn',
+      ngaysinh: '2001-2-28',
+      phai: false,
+      khuvuc: 'Trung',
     },
   ];
 
-  constructor() {}
+  private url = 'http://localhost:3000/nhanVien';
+
+  constructor(private http: HttpClient) {}
 
   getAll() {
     return this.list;
   }
 
+  getData() {
+    return this.http.get(this.url);
+  }
+
   getOne(id: number) {
-    return this.list.find((currentValue) => currentValue.id == id);
+    // return this.list.find((currentValue) => currentValue.id == id);
+    return this.http.get(`${this.url}/${id}`);
   }
 
   addItem(item: NhanVien = <NhanVien>{}) {
-    this.list.push(item);
+    const params = new HttpParams({
+      fromObject: { ...item },
+    });
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    return this.http.post(this.url, params, { headers }).subscribe((data) => {
+      // console.log(data);
+    });
+    // this.list.push(item);
   }
 
   editItem(item: NhanVien = <NhanVien>{}) {
-    let index = this.list.findIndex(
-      (currentValue) => currentValue.id == item.id
-    );
-    this.list[index] = item;
+    const params = new HttpParams({
+      fromObject: { ...item },
+    });
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    return this.http
+      .put(`${this.url}/${item.id}`, params, { headers })
+      .subscribe((data) => {
+        // console.log(data);
+      });
+
+    // let index = this.list.findIndex(
+    //   (currentValue) => currentValue.id == item.id
+    // );
+    // this.list[index] = item;
   }
 
   deleteItem(id: number = 0) {
-    let index = this.list.findIndex((currentValue) => {
-      return currentValue.id == id;
-    });
-    console.log(index);
-    this.list.splice(index, 1);
+    return this.http
+      .delete(`${this.url}/${id}`)
+      .subscribe(() => console.log('Deleted'));
+
+    // let index = this.list.findIndex((currentValue) => {
+    //   return currentValue.id == id;
+    // });
+    // console.log(index);
+    // this.list.splice(index, 1);
   }
 }

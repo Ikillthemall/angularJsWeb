@@ -1,17 +1,48 @@
 <h4 class="bg-info p-2">DANH SÁCH TASK</h4>
-<div *ngFor="let task of listTask" class="mb-3">
-  <div>
+<div *ngFor="let task of listTask" class="mb-3 main-task">
+  <div class="width80">
     <b>{{ task.tenTask }} </b><br />
-    {{ task.moTa }}
+    <span class="fz9">
+      {{ task.moTa }}
+    </span>
   </div>
-  <div class="mb-3 border-bottom row">
-    <div class="col-6">
-      Priority: {{ task.priority }}<br />
-      Status: {{ task.status }}
+  <div class="mb-3 mt-1 border-bottom row">
+    <div class="col-5">
+      <strong>Độ ưu tiên:</strong> {{ task.priority == 1 ? "Gấp" : "Không gấp" }}<br />
+      <strong>Trạng thái:</strong>
+      {{
+        task.status == 1
+          ? "Đang chờ"
+          : task.status == 2
+          ? "Hoàn thành"
+          : "Đang sửa lỗi"
+      }}
     </div>
     <div class="col-6">
-      Nhân viên {{ task.nhanvienID }}<br />
-      Dự án: {{ task.duAnID }}
+      <div *ngFor="let nv of listNV">
+        <span *ngIf="task.nhanvienID == nv.id"
+          ><strong>Nhân viên: </strong>{{ nv.ho + " " + nv.ten }}</span
+        >
+      </div>
+      <div *ngFor="let da of listDuAn">
+        <span *ngIf="task.duAnID == da.id"><strong>Dự án:</strong> {{ da.tenDuAn }}</span>
+      </div>
     </div>
+  </div>
+  <div class="btn-action">
+    <button
+      type="button"
+      class="btn btn-warning"
+      (click)="editTask(task)"
+    >
+      Sửa
+    </button>
+    <button
+      type="button"
+      class="mt-2 btn btn-danger"
+      (click)="deleteTask(task.id)"
+    >
+      Xóa
+    </button>
   </div>
 </div>

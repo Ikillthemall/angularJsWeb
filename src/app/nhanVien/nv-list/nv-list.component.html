@@ -18,5 +18,21 @@
         <span class="card-id-card-text">Khu vực: Miền {{ nv.khuvuc }}</span>
       </div>
     </div>
+    <div class="btn-action p-2">
+      <button
+        type="button"
+        class="btn btn-warning"
+        (click)="editNV(nv)"
+      >
+        Sửa
+      </button>
+      <button
+        type="button"
+        class="ms-2 btn btn-danger"
+        (click)="deleteNV(nv.id)"
+      >
+        Xóa
+      </button>
+    </div>
   </div>
 </div>

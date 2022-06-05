@@ -22,7 +22,8 @@ export class DuanChiTietComponent implements OnInit {
   @Output() teamOut = new EventEmitter();
 
   idDuAn: number = Number(this.route.snapshot.params['id']);
-  allDuAn: DuAn[] = [];
+  allDuAn: any;
+  allNV: any;
   duAn = <DuAn>{};
 
   listNv: NhanVien[] = [];
@@ -41,47 +42,75 @@ export class DuanChiTietComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.allDuAn = this.DuAnService.getAll();
+    this.DuAnService.getData().subscribe(
+      (response: any) => {
+        this.allDuAn = response;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+    this.NhanVienService.getData().subscribe(
+      (response: any) => {
+        this.allNV = response;
+        this.getData();
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+  }
 
+  getData() {
     if (this.idDuAn < 0) return;
 
-    let kq = this.DuAnService.getOne(this.idDuAn);
-    if (kq == null) {
-      this.duAn = {} as DuAn;
-    } else {
-      this.duAn = kq as DuAn;
-      let data: any[] = this.duAn.thanhvien.map((item) =>
-        this.NhanVienService.getOne(item)
-      );
-      this.listNv = data;
+    //get detail this project
+    this.DuAnService.getOne(this.idDuAn).subscribe(
+      (response: any) => {
+        if (response == null) {
+          this.duAn = {} as DuAn;
+        } else {
+          this.duAn = response as DuAn;
 
-      //check member area
-      this.listNv.forEach((item) => {
-        if (item.khuvuc == 'Bắc') {
-          this.team.memberNorth.push(item);
-          this.totalNorth = this.totalNorth + 1;
-        }
-        if (item.khuvuc == 'Trung') {
-          this.team.memberCentral.push(item);
-          this.totalCentral = this.totalCentral + 1;
-        }
-        if (item.khuvuc == 'Nam') {
-          this.team.memberSouth.push(item);
-          this.totalSouth = this.totalSouth + 1;
-        }
-      });
+          //get info member in project
+          this.listNv = this.allNV.filter((item: any) =>
+            this.duAn.thanhvien.includes(item.id)
+          );
+          // this.duAn.thanhvien.forEach((item) => {
+          //   this.NhanVienService.getOne(item).subscribe(
+          //     (_item: any) => (data.push(_item))
+          //   );
+          // });
+          // console.log(data);
 
-      //pass data to parent component
-      // this.ds.sendData(this.team);
-      this.teamOut.emit(this.team);
-    }
+          //check member area
+          this.listNv.forEach((item) => {
+            if (item.khuvuc == 'Bắc') {
+              this.team.memberNorth.push(item);
+              this.totalNorth = this.totalNorth + 1;
+            }
+            if (item.khuvuc == 'Trung') {
+              this.team.memberCentral.push(item);
+              this.totalCentral = this.totalCentral + 1;
+            }
+            if (item.khuvuc == 'Nam') {
+              this.team.memberSouth.push(item);
+              this.totalSouth = this.totalSouth + 1;
+            }
+          });
+          this.teamOut.emit(this.team);
+        }
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   onChange(deviceValue: any) {
     this.router.navigate(['/duan', deviceValue.value]);
     this.idDuAn = deviceValue.value;
     console.log(this.team);
-    // this.ds.sendData(this.team);
     this.teamOut.emit(this.team);
 
     return true;

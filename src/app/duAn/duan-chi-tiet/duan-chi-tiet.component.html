@@ -7,7 +7,7 @@
     <option
       *ngFor="let duAnSelect of allDuAn"
       [value]="duAnSelect.id"
-      [selected]="duAnSelect.id === idDuAn"
+      [selected]="duAnSelect.id == idDuAn"
     >
       {{ duAnSelect.tenDuAn }}
     </option>
