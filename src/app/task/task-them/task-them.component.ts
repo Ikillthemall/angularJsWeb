@@ -37,7 +37,7 @@ export class TaskThemComponent implements OnInit {
     });
     this.frm1 = new FormGroup({
       taskName: new FormControl('',[
-        Validators.minLength(4),
+        Validators.minLength(6),
         Validators.required,
       ]),
       taskDescription: new FormControl('', [
@@ -52,7 +52,7 @@ export class TaskThemComponent implements OnInit {
     console.log(this.frm1);
   }
 
-  xuly(data: any) {
+  handleData(data: any) {
     data = {
       id: this.allTask[this.allTask.length - 1].id + 1,
       tenTask: data.taskName,

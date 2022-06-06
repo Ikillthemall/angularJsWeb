@@ -1,4 +1,4 @@
-<form [formGroup]="frm1" (ngSubmit)="xuly(frm1.value)">
+<form [formGroup]="frm1" (ngSubmit)="handleData(frm1.value)">
   <h5 class="bg-info p-2">THÊM TASK</h5>
   <p class="mb-3">
     <strong>Tên task</strong>
@@ -6,6 +6,7 @@
       formControlName="taskName"
       class="form-control"
       placeholder="Nhập tên task..."
+      minlength="6"
     />
     <span *ngIf="frm1.controls['taskName']?.errors" class="text-danger">
       Tên task tối thiểu 6 ký tự.

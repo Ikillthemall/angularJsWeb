@@ -10,25 +10,9 @@ export class LeaderService {
     {
       id: 1,
       avt: 'https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.1997-6/851575_392310047532974_678875671_n.png?stp=dst-png_s168x128&_nc_cat=1&ccb=1-7&_nc_sid=0572db&_nc_ohc=jpx0PpoHg4sAX9rGFaH&_nc_ht=scontent.fsgn2-6.fna&oh=00_AT9wzfkTSHSD_dGZufms4sspKMSN4IU_o8nJ5XDF-2z2zA&oe=628C450D',
-      ho: 'Huỳnh Quốc',
-      ten: 'Hưng',
+      ho: 'Lê',
+      ten: 'Trung',
       ngaysinh: '2001-11-15',
-      phai: true,
-    },
-    {
-      id: 2,
-      avt: 'https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=dst-png_p100x100&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=uOuV_ed7AVYAX-USzrQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn2-6.fna&oh=00_AT-nfBHko36bekclSjTpQ1pPrPXtncK7FofL76Bh6D9OPA&oe=62AEC878',
-      ho: 'Nguyễn Tấn',
-      ten: 'Tường',
-      ngaysinh: '1999-5-6',
-      phai: true,
-    },
-    {
-      id: 3,
-      avt: 'https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=dst-png_p100x100&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=uOuV_ed7AVYAX-USzrQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn2-6.fna&oh=00_AT-nfBHko36bekclSjTpQ1pPrPXtncK7FofL76Bh6D9OPA&oe=62AEC878',
-      ho: 'Đặng Trung',
-      ten: 'Kiên',
-      ngaysinh: '2002-3-6',
       phai: true,
     },
   ];

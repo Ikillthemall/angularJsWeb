@@ -309,20 +309,20 @@
       ]
     },
     {
-      "id": "11",
-      "tenDuAn": "agag",
-      "ngayStart": "undefined",
-      "tien": 120000,
-      "leader": "undefined",
-      "thanhvien": "5"
-    },
-    {
       "id": "12",
       "tenDuAn": "levutrung",
       "ngayStart": "2022-06-01",
       "tien": "1100000",
       "leader": "2",
       "thanhvien": "2"
+    },
+    {
+      "id": "13",
+      "tenDuAn": "Quản lý nhân viên",
+      "ngayStart": "2022-06-03",
+      "tien": "200000000",
+      "leader": "1",
+      "thanhvien": "9"
     }
   ],
   "leader": [
