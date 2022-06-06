@@ -2,7 +2,7 @@
   "task": [
     {
       "id": 2,
-      "tenTask": "Mô hình MVD",
+      "tenTask": "Mô hình MVC",
       "duAnID": "2",
       "nhanvienID": "2",
       "moTa": "Áp dụng mô hình vào dự án, thực hiện CRUD Admin",

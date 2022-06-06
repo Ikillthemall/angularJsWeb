@@ -153,3 +153,9 @@
     opacity: 1;
   }
 }
+
+.btn-color {
+  &:hover {
+    color: #fff !important;
+  }
+}

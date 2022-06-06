@@ -1,10 +1,10 @@
 <div class="main mt-3">
   <app-leader class="leader"></app-leader>
-  <div class="info-project">
+  <div class="info-project" style="width: 73%;">
     <main class="main_container">
       <router-outlet (teamOut)="dataTeam($event)">
       </router-outlet>
     </main>
   </div>
-  <app-list-member class="list-member" [team]="team"></app-list-member>
+  <!-- <app-list-member class="list-member" [team]="team"></app-list-member> -->
 </div>

@@ -40,5 +40,9 @@
 }
 .text-group {
   display: flex;
-  
+}
+.btn-color {
+  &:hover {
+    color: #fff !important;
+  }
 }

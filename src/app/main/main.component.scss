@@ -1,7 +1,7 @@
 .main {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   .leader {
     width: 25%;
     background-color: #eae6e6;
@@ -10,7 +10,6 @@
     padding: 0 0.5rem 1rem;
   }
   .info-project {
-    width: 50%;
     background-color: #eae6e6;
     padding-bottom: 1rem;
     .main_container {
@@ -30,8 +29,8 @@
       }
     }
   }
-  .list-member {
-    width: 25%;
-    background-color: #eae6e6;
-  }
+  // .list-member {
+  //   width: 25%;
+  //   background-color: #eae6e6;
+  // }
 }

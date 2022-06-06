@@ -1,4 +1,4 @@
-<h4 class="bg-info p-2">DANH SÁCH TASK</h4>
+<h4 class="bg-info mb-5 card-heading-title text-center">DANH SÁCH TASK</h4>
 <div *ngFor="let task of listTask" class="mb-3 main-task">
   <div class="width80">
     <b>{{ task.tenTask }} </b><br />
@@ -36,14 +36,14 @@
   <div class="btn-action">
     <button
       type="button"
-      class="btn btn-warning"
+      class="btn btn-outline-warning text-dark fw-normal btn-color"
       (click)="editTask(task)"
     >
       Sửa
     </button>
     <button
       type="button"
-      class="mt-2 btn btn-danger"
+      class="mt-2 btn btn-outline-danger text-dark fw-normal btn-color"
       (click)="deleteTask(task.id)"
     >
       Xóa

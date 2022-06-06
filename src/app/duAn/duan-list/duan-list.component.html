@@ -1,9 +1,9 @@
-<h4 class="text-center pb-3">Danh sách dự án</h4>
+<h4 class="text-center mb-4 card-heading-title">Danh sách dự án</h4>
 <div class="sp dfl">
-  <div class="card" *ngFor="let da of listDuAn">
-    <div class="g-0">
+  <div class="card p-1" *ngFor="let da of listDuAn" style="border: none;">
+    <div class="g-0 card-content">
       <div class="card-body">
-        <div class="card-header bg-info">
+        <div class="card-header">
           <a href="#" routerLink="/duan/{{ da.id }}">
             <h5 class="card-title">{{ da.tenDuAn }}</h5>
           </a>
@@ -25,14 +25,14 @@
         <div class="btn-action mt-4">
           <button
             type="button"
-            class="btn btn-warning mb-2"
+            class="btn btn-outline-warning mb-2 text-dark fw-normal btn-color"
             (click)="editDuAn(da)"
           >
             Sửa
           </button>
           <button
             type="button"
-            class="btn btn-danger"
+            class="btn btn-outline-danger text-dark fw-normal btn-color"
             (click)="deleteDuAn(da.id)"
           >
             Xóa
