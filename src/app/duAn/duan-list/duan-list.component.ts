@@ -43,6 +43,6 @@ export class DuanListComponent implements OnInit {
       this.DuAnService.deleteItem(id);
     setTimeout(() => {
       this.getData();
-    }, 500);
+    }, 1000);
   }
 }

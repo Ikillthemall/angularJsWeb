@@ -46,6 +46,7 @@ export class DuAnService {
   constructor(private http: HttpClient) {}
 
   getAll() {
+    console.log(this.list);
     return this.list;
   }
 
@@ -98,6 +99,7 @@ export class DuAnService {
     return this.http.delete(`${this.url}/${id}`).subscribe((data) => {
       console.log(data);
     });
+    
     // let index = this.list.findIndex((currentValue) => {
     //   return currentValue.id == id;
     // });
