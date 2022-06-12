@@ -53,6 +53,7 @@ export class DuanThemComponent implements OnInit {
   }
 
   handleData(data: any) {
+    console.log(this.projects)
     // let projects = this.DuAnService.getAll();
     data = {
       id: parseInt(this.projects[this.projects.length - 1].id) + 1,

@@ -17,10 +17,11 @@ import { NvSuaComponent } from './nhanVien/nv-sua/nv-sua.component';
 import { DuanListComponent } from './duAn/duan-list/duan-list.component';
 import { DuanChiTietComponent } from './duAn/duan-chi-tiet/duan-chi-tiet.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
+import { LoginComponent } from './user/login/login.component';
+// import { registerLocaleData } from '@angular/common';
+// import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './user/register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { LoginComponent } from './login/login.component';
     NvSuaComponent,
     DuanChiTietComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

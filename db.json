@@ -195,7 +195,7 @@
   "duAn": [
     {
       "id": "1",
-      "tenDuAn": "Website startup blockchain",
+      "tenDuAn": "Website startup blockchain pro",
       "ngayStart": "2022-03-01",
       "tien": "20000000",
       "leader": "1",
@@ -365,6 +365,16 @@
       "ten": "Hưng",
       "ngaysinh": "2002-3-6",
       "phai": false
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "userName": "LeTrung3000",
+      "userPass": "12345",
+      "userEmail": "letrung10091011@gmail.com",
+      "userPhone": "0987294422",
+      "userAddress": "HCM"
     }
   ]
 }

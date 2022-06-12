@@ -1,4 +1,5 @@
-import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './user/register/register.component';
+import { LoginComponent } from './user/login/login.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'nvThem', component: NvThemComponent },
   { path: 'nvSua/:id', component: NvSuaComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
 ];
 
 @NgModule({

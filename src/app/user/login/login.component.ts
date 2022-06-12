@@ -1,3 +1,5 @@
+import { User } from '../../user';
+import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+    userName: any;
+    userPass: any;
+    userPhone: any;
+    userEmail: any;
+    userAddress: any;
+  constructor(
 
-  constructor() { }
+  ) { }
+  listAuth: User[] = []
 
   ngOnInit(): void {
   }
