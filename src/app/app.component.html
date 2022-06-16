@@ -102,12 +102,16 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item" href="#" routerLink="/login"
+              <a class="dropdown-item" href="#" routerLink="/userLogin"
                 >Đăng nhập</a
               >
             </li>
             <li>
-              <a class="dropdown-item" href="#" routerLink="/register">Đăng ký</a>
+              <a class="dropdown-item" href="#" routerLink="/userRegister">Đăng ký</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" routerLink="/userChangePass">Đổi mật khẩu</a>
+              <a class="dropdown-item" href="#" (click)="logout()">Thoát</a>
             </li>
             <li><hr class="dropdown-divider" /></li>
             <li>
@@ -146,14 +150,15 @@
         <div class="main-intro">
             <div class="intro-header">
                 <h3 class="intro-title">Welcome you come to us</h3>
+                <p class="text-danger"> Tình trạng đăng nhập: {{ isLogined() }}</p>
             </div>
-            <div class="intro-content">
+            <!-- <div class="intro-content">
                 <div class="intro-des">
                     <div class="intro-detail">
                       <p class="intro-text">This is a project to manage many projects, memebers and tasks. You can CRUD actions.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
       </router-outlet>
     </main>

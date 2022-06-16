@@ -13,6 +13,8 @@ import { NvThemComponent } from './nhanVien/nv-them/nv-them.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { TaskSuaComponent } from './task/task-sua/task-sua.component';
 import { TaskThemComponent } from './task/task-them/task-them.component';
+import { ChangePassComponent } from './change-pass/change-pass.component';
+import { ProtectGuard } from './protect.guard';
 
 const routes: Routes = [
   { path: 'duanList', component: DuanListComponent },
@@ -25,8 +27,9 @@ const routes: Routes = [
   { path: 'nvList', component: NvListComponent },
   { path: 'nvThem', component: NvThemComponent },
   { path: 'nvSua/:id', component: NvSuaComponent },
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
+  { path: 'userLogin', component: LoginComponent},
+  { path: 'userRegister', component: RegisterComponent},
+  { path: 'userChangePass', component: ChangePassComponent, canActivate:[ProtectGuard]},
 ];
 
 @NgModule({

@@ -1,13 +1,13 @@
-<form #frm1="ngForm">
+<form #frm1="ngForm" (ngSubmit)="handleNewData(frm1.value)">
     <h5 class="bg-info p-2 title-info col-8">ĐĂNG NHẬP</h5>
     <p class="mb-3 col-8">
       <span class="input-title">Tên đăng nhập</span>
       <input
-        name="proName"
+        name="un"
+        ngModel
         class="form-control"
         placeholder="Nhập tên đăng nhập"
         required
-        minlength="6"
       />
       <!-- <span *ngIf="errName.invalid && (errName.dirty || errName.touched)">
         <span *ngIf="errName.errors?.['required']" class="text-danger">
@@ -22,13 +22,14 @@
       </span> -->
     </p>
     <p class="mb-3 col-8">
-      <span class="input-title">Tên đăng nhập</span>
+      <span class="input-title">Mật khẩu</span>
       <input
-        name="userPass"
+        name="pw"
+        ngModel
         class="form-control"
         placeholder="Nhập mật khẩu"
         required
-        minlength="8"
+        type="password"
       />
       <!-- <span *ngIf="errName.invalid && (errName.dirty || errName.touched)">
         <span *ngIf="errName.errors?.['required']" class="text-danger">

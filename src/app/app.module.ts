@@ -22,6 +22,9 @@ import { LoginComponent } from './user/login/login.component';
 // import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './user/register/register.component';
+import { Moment } from 'moment';
+import * as moment from 'moment';
+import { ChangePassComponent } from './change-pass/change-pass.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { RegisterComponent } from './user/register/register.component';
     DuanChiTietComponent,
     LoginComponent,
     RegisterComponent,
+    ChangePassComponent,
   ],
   imports: [
     BrowserModule,

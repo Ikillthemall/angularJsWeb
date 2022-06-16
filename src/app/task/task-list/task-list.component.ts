@@ -47,9 +47,6 @@ export class TaskListComponent implements OnInit {
   editTask(task: any) {
     this.DataService.sendData(task);
     this.router.navigate([`/taskSua/${task.id}`]);
-    setTimeout(() => {
-      this.router.navigate([`taskList`]);      
-    }, 1000)
   }
 
   deleteTask(id: number) {

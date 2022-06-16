@@ -370,11 +370,19 @@
   "user": [
     {
       "id": "1",
-      "userName": "LeTrung3000",
-      "userPass": "12345",
+      "userName": "leTrung3000",
+      "userPass": "12345678",
       "userEmail": "letrung10091011@gmail.com",
       "userPhone": "0987294422",
       "userAddress": "HCM"
+    },
+    {
+      "id": "2",
+      "userName": "Ikillthemall",
+      "userPass": "12345678",
+      "userEmail": "letrung123@gmail.com",
+      "userPhone": "0987294477",
+      "userAddress": "Ha Noi"
     }
   ]
 }
